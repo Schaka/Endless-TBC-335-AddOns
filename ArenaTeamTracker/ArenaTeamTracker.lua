@@ -684,7 +684,7 @@ function ATT:ApplyAnchorSettings()
     self:UpdateIcons()
 end
 
-function ATT:GROUP_ROSTER_UPDATE()
+function ATT:PARTY_MEMBERS_CHANGED()
     self:LoadPositions()
     self:RequestSync()
     self:UpdateAnchors()
@@ -964,7 +964,7 @@ end
 local function ATT_OnLoad(self)
 
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
-    self:RegisterEvent("GROUP_ROSTER_UPDATE")
+    self:RegisterEvent("PARTY_MEMBERS_CHANGED")
     self:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
     self:RegisterEvent("ARENA_COOLDOWNS_UPDATE")
     self:RegisterEvent("INSPECT_READY")
@@ -1293,7 +1293,7 @@ function ATT:CreateOptions()
                 db.showIconBorders = value;
                 ATT:LoadPositions();
                 ATT:ApplyAnchorSettings();
-                ATT:GROUP_ROSTER_UPDATE()
+                ATT:PARTY_MEMBERS_CHANGED()
             end)
     showIconBorders:SetPoint("TOP", glow, "BOTTOM", 0, -5)
 
@@ -1383,7 +1383,7 @@ function ATT:CreateOptions()
                 db.showTrinket = value;
                 ATT:LoadPositions();
                 ATT:ApplyAnchorSettings();
-                ATT:GROUP_ROSTER_UPDATE()
+                ATT:PARTY_MEMBERS_CHANGED()
             end)
     showTrinket:SetPoint("LEFT", lock, "RIGHT", 90, 0)
 
@@ -1398,7 +1398,7 @@ function ATT:CreateOptions()
                 db.showRacial = value;
                 ATT:LoadPositions();
                 ATT:ApplyAnchorSettings();
-                ATT:GROUP_ROSTER_UPDATE()
+                ATT:PARTY_MEMBERS_CHANGED()
             end)
     showRacial:SetPoint("TOP", showTrinket, "BOTTOM", 0, -5)
 
