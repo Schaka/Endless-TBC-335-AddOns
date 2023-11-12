@@ -846,10 +846,9 @@ function ATT:ARENA_COOLDOWNS_UPDATE(unit)
     end
 end
 
-function ATT:UNIT_SPELLCAST_SUCCEEDED(unit, castGUID, spellID)
+function ATT:UNIT_SPELLCAST_SUCCEEDED(unit, spellName)
     local sourceGUID = UnitGUID(unit);
     local attUnit = self:GetUnitByGUID(sourceGUID);
-    local spellName = GetSpellInfo(spellID);
 
     self:StartCooldown(spellName, attUnit);
 end
