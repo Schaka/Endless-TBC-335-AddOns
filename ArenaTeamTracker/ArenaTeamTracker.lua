@@ -859,7 +859,7 @@ function ATT:COMBAT_LOG_EVENT_UNFILTERED(event, ...)
         return
     end
 
-    local timestamp, event, hideCaster, sourceGUID, sourceName,
+    local timestamp, event, sourceGUID, sourceName,
     sourceFlags, destGUID, destName, destFlags, spellID, spellName, spellSchool, auraType = select (1 , ... )
     local attUnit = self:GetUnitByGUID(sourceGUID);
 
