@@ -1,4 +1,4 @@
-## Interface: 20400
+## Interface: 30300
 ## Title: Icicle - XiCoN Edit
 ## Notes: Adds enemy cooldowns to their nameplate
 ## SavedVariables: Icicledb

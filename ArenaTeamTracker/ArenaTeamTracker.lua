@@ -847,6 +847,7 @@ function ATT:ARENA_COOLDOWNS_UPDATE(unit)
 end
 
 function ATT:UNIT_SPELLCAST_SUCCEEDED(unit, spellName)
+    -- unit, spellName, rank, lineID, spellID
     local sourceGUID = UnitGUID(unit);
     local attUnit = self:GetUnitByGUID(sourceGUID);
 

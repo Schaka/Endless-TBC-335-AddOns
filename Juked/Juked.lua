@@ -549,6 +549,7 @@ local function Juked_StartTimer(ref,ability)
 end
 
 local function Juked_COMBAT_LOG_EVENT_UNFILTERED(...)
+	-- local timestamp, event, sourceGUID, sourceName, sourceFlags, destGUID, destName, destFlags, spellID, spellName, spellSchool, auraType
 	local ability, useSecondDuration
 	return function(timestamp, event, sourceGUID,sourceName,sourceFlags,destGUID,destName,destFlags,id,spellName)
 	if (band(sourceFlags, 0x00000040) == 0x00000040) and (event == "SPELL_CAST_SUCCESS" or eventtype == "SPELL_AURA_APPLIED") then 
