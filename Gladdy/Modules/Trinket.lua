@@ -35,18 +35,12 @@ function Trinket:Initialize()
 	if Gladdy.db.trinketEnabled then
 		self:RegisterMessage("JOINED_ARENA")
 		self:RegisterMessage("TRINKET_USED")
-		if Gladdy.expansion == "Wrath" then
-			self:RegisterMessage("RACIAL_USED")
-		end
 	end
 end
 
 function Trinket:UpdateFrameOnce()
 	if Gladdy.db.trinketEnabled then
 		self:RegisterMessage("JOINED_ARENA")
-		if Gladdy.expansion == "Wrath" then
-			self:RegisterMessage("RACIAL_USED")
-		end
 	else
 		self:UnregisterAllMessages()
 	end
@@ -316,19 +310,7 @@ function Trinket:TRINKET_USED(unit)
 end
 
 function Trinket:RACIAL_USED(unit) -- Wrath only
-	local trinket = self.frames[unit]
-	if (not trinket) then
-		return
-	end
-	if Gladdy.buttons[unit].race == "Scourge" then
-		if trinket.active and trinket.timeLeft >= 45 then
-			-- do nothing
-		else
-			self:Used(unit, GetTime() * 1000, 45000)
-		end
-	elseif Gladdy.buttons[unit].race == "Human" then
-		self:Used(unit, GetTime() * 1000, 120000)
-	end
+	
 end
 
 function Trinket:ARENA_COOLDOWNS_UPDATE()
